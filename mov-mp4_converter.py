@@ -3,6 +3,7 @@ from tkinter import ttk
 import tkinter.font as font
 from tkinter import filedialog
 import os
+from tkinter import messagebox
 from ctypes import windll
 windll.shcore.SetProcessDpiAwareness(1)
 
@@ -127,6 +128,9 @@ class MOV_MP4_Converter:
             mov_listbox.delete(0,'end')
             mov_listbox.insert("end", "No .MOV files have been selcted.")
             convert_btn_state()
+            messagebox.showinfo(
+                "Conversion Completed", "All .MOV files have succesfully been converted\nto their original location."
+            )
 
         convert_button = ttk.Button(
             master,
